@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!--
+    <div class="container">
+        <div class="card border-success">
+            <div class="card-header">
+                <h1 class="card-title text-info text-center">Ejercicio JS</h1>
+                Mi primer JS
+
+            </div>
+            <div class="card-body text-primary text-center">
+                <script type="text/JavaScript">
+                    document.write("<b>Ejemplo de for: </b>")
+                    let suma = 0;
+                    let n = prompt("Ingrese un numero: ")
+                    for (let i = 1 ; i <= n ; i++)
+                    {
+                        suma += i
+                        document.write(" Suma: ",i)
+                    }
+                    document.write("<br><b><i> Resultado final es: "+ suma +" </b></i>")
+
+                </script>
+            </div>
+            <div class="card-footer text-center text-primary">
+                Obtener la suma de los primeros 100 números enteros
+            </div>
+        </div>
+    </div>
+    <div class="contenedor">
+        <div class="card border-success">
+            <div class="card-header">
+                <h1 class="card-title text-info text-center">Ejercicio JS</h1>
+                Mi primer JS
+
+            </div>
+            <div class="card-body text-primary text-center">
+                <script type="text/JavaScript">
+                    document.write("<b>Ejemplo de for: </b>")
+                    let suma = 0;
+                    let n = prompt("Ingrese un numero: ")
+                    for (let i = 1 ; i <= n ; i++)
+                    {
+                        suma += i
+                        document.write(" Suma: ",i)
+                    }
+                    document.write("<br><b><i> Resultado final es: "+ suma +" </b></i>")
+
+                </script>
+            </div>
+            <div class="card-footer text-center text-primary">
+                Obtener la suma de los primeros 100 números enteros
+            </div>
+        </div>
+    </div>
+    -->
+
+    <table class="table table-striped contenedor">
+        <thead>
+            <th>Tabla de multiplicar</th>
+        </thead>
+        <tbody>
+            <script>
+                (function () {
+                    const max = 20;
+                    const table = document.querySelector('table.table.contenedor');
+                    const tbody = table.querySelector('tbody');
+
+                    // Clear tbody in case there's placeholder content
+                    tbody.innerHTML = '';
+
+                    for (let i = 1; i <= max; i++) {
+                        const tr = document.createElement('tr');
+                        for (let j = 1; j <= max; j++) {
+                            const td = document.createElement('td');
+                            td.textContent = i * j;
+                            tr.appendChild(td);
+                        }
+                        tbody.appendChild(tr);
+                    }
+                })();
+            </script>
+        </tbody>
+    </table>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body class="d-flex flex-column justify-content-center align-items-center min-vh-100">
+    <div class="header text-center">
+        <h1>Ejercicio 6</h1>
+    </div>
+    <div class="container text-center py-2">
+        <h4 class="instruccion text-center">
+            Calcular la media de una secuencia de números proporcionado por el usuario. </h4>
+        <script type="text/JavaScript">
+            alert("Calcular la media de una secuencia de números proporcionado por el usuario.");
+            let n;
+            let res = 0;
+            let e = true;
+            let i = 0;
+            let num = [];
+            while(e){
+                num[i] = prompt("Escribe un numero.")
+                e = confirm("Deseas agregar otro numero?")
+                i++;
+            }
+            n = num.length;
+            for(let j = 0 ; j < n ; j++)
+            {
+                document.write("<h5>Numeros: " + num[j] +  ", </h5>");
+                res += num[j]/n
+            }
+
+            document.write("<br><h5>Resultado: " + res +  " </h5>");
+        </script>
+    </div>
+    <div class="footer retorno-botton text-center py-3">
+        <button type="button" class="btn btn-warning" onclick="window.location.href='../navegador.html'">Volver</button>
+    </div>
+</body>
+
+</html>

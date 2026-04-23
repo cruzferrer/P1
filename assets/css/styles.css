@@ -1,0 +1,23 @@
+body{
+    background-color: #8e8686;
+    font-family: Arial, sans-serif;
+    font-size: large;
+}
+
+.container {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    color: cornflowerblue;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    line-height: 2;
+}
+
+th {
+    text-align: center;
+    font-family: "Tangerine", cursive;
+    font-size: 30px;
+    font-weight: 700;
+}

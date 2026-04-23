@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body class="d-flex flex-column justify-content-center align-items-center min-vh-100">
+    <div class="header text-center">
+        <h1>Ejercicio 8</h1>
+    </div>
+    <div class="container text-center py-2">
+        <h4 class="instruccion text-center">
+            Dado una secuencia de textos proporcionados por el usuario visualizar: la longitud, en mayúsculas, en
+            minúsculas, cada uno de ellas. </h4>
+        <script type="text/JavaScript">
+            alert("Dado una secuencia de textos proporcionados por el usuario visualizar: la longitud, en mayúsculas, en minúsculas, cada uno de ellas.");
+            let l =  prompt("Cuantos textos deseas agregar: ");
+            let textos = [];
+            for(let i  = 0 ; i < l ; i++) {
+                textos[i] = prompt("Escribe un texto.");
+            }
+            for(let i = 0 ; i < l ; i++) {
+                document.write("<br><h5>Texto " + (i + 1) + ": " + textos[i] + "</h5>");
+                document.write("<p>Longitud: " + textos[i].length + "</p>");
+                document.write("<p>En mayúsculas: " + textos[i].toUpperCase() + "</p>");
+                document.write("<p>En minúsculas: " + textos[i].toLowerCase() + "</p>");
+            }
+        </script>
+    </div>
+    <div class="footer retorno-botton text-center py-3">
+        <button type="button" class="btn btn-warning" onclick="window.location.href='../navegador.html'">Volver</button>
+    </div>
+</body>
+
+</html>

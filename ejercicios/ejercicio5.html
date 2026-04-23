@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body class="d-flex flex-column justify-content-center align-items-center min-vh-100">
+    <div class="header text-center">
+        <h1>Ejercicio 5</h1>
+    </div>
+    <div class="container text-center py-2">
+        <h4 class="instruccion text-center">
+            Dado dos vectores A y B de n elementos cada uno, obtener un arreglo C donde la posición i se almacene la
+            suma de A[i] + B[i]. </h4>
+        <script type="text/JavaScript">
+            alert("Dado dos vectores A y B de n elementos cada uno, obtener un arreglo C donde la posición i se almacene la suma de A[i] + B[i].");
+            let n =  prompt("Cuantos numeros deseas agregar: ");
+            let A = [];
+            let B = [];
+            let C = [];
+            for(let i  = 0 ; i < n ; i++) {
+                A[i] = parseInt(prompt("Escribe un numero para el vector A: "));
+                B[i] = parseInt(prompt("Escribe un numero para el vector B: "));
+                C[i] = A[i] + B[i];
+            }
+            document.write("<br><h5>Resultado: A[i] + B[i] = C[i]</h5>");
+            for(let i = 0 ; i < n ; i++) {
+                document.write("<br><h5>Resultado: " + A[i] + " + " + B[i] + " = " + C[i] +  " </h5>");
+            }
+        </script>
+    </div>
+    <div class="footer retorno-botton text-center py-3">
+        <button type="button" class="btn btn-warning" onclick="window.location.href='../navegador.html'">Volver</button>
+    </div>
+</body>
+
+</html>
