@@ -1,0 +1,430 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[fleqn]{mathtools}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{nccmath}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{tasks}
+\usepackage{color}
+\usepackage{float}
+\usepackage[table]{xcolor}
+\usepackage{colortbl}
+\usepackage{ragged2e}
+
+\definecolor{colorIPN}{rgb}{0.5, 0.0,0.13}
+\definecolor{colorESCOM}{rgb}{0.0, 0.5,1.0}
+
+% Configuracion de listings para JavaScript
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.97,0.97,0.97}
+
+\lstdefinestyle{jsStyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    language=Java
+}
+
+\begin{document}
+
+% --- ENCABEZADO LOGOS ---
+\begin{figure}[H] 
+    \centering 
+    \begin{minipage}{0.2\textwidth} 
+        \raggedright 
+        \includegraphics[scale=0.04]{reporte 1/imagenes/IPN-Logo.png} 
+    \end{minipage} 
+    \hfill 
+    \begin{minipage}{0.45\textwidth} 
+        \raggedleft 
+        \includegraphics[scale=0.06]{reporte 1/imagenes/escom.png} 
+    \end{minipage} 
+\end{figure}
+\centering
+{ \huge \bfseries \color{colorIPN}{Instituto Politécnico Nacional} \par}
+{ \Large \bfseries  \color{colorESCOM}{Escuela Superior de Cómputo} \par }
+\vspace{1cm}
+{\huge\Large \color{colorIPN}{Programación Web}\par}
+\vspace{2cm}
+{\huge\Large  \color{colorESCOM}{Práctica 1: Ejercicios de JavaScript}\par}
+\vspace{2cm}
+{\Large\itshape \color{colorIPN}{Profesor: [Nombre del Profesor]}\par}
+\vspace{1cm}
+{\Large\itshape \color{colorIPN}{Alumno: Ferrer Parra Cruz Ricardo}\par}
+\vspace{1cm}
+{\Large\itshape \color{colorIPN}{Grupo: 3MB1}\par}
+\vfill
+{\large \color{colorIPN}{Ciudad de México, 22 de abril de 2026}\par}
+
+\pagebreak
+\tableofcontents
+\pagebreak
+\pagenumbering{arabic}
+
+\justifying
+
+%================================================
+\section{\color{colorIPN}{Introducción}}
+
+JavaScript es un lenguaje de programación interpretado, de tipado dinámico y orientado a eventos, ampliamente utilizado para dotar de interactividad a las páginas web. A diferencia de lenguajes compilados, JavaScript se ejecuta directamente en el navegador del cliente, lo que lo convierte en una herramienta fundamental del desarrollo web moderno.
+
+En la presente práctica se desarrolló un sitio web compuesto por múltiples páginas HTML en las que se implementaron distintos ejercicios de programación haciendo uso de JavaScript embebido dentro de etiquetas \texttt{<script>}. La interacción con el usuario se realizó mediante las funciones nativas \texttt{alert()}, \texttt{prompt()} y \texttt{confirm()}, mientras que la salida de resultados se gestionó a través de \texttt{document.write()}.
+
+Los ejercicios se agruparon en cuatro categorías principales:
+\begin{itemize}
+    \item \textbf{Ejercicios generales (1--8)}: Operaciones con números, arreglos y cadenas de texto.
+    \item \textbf{Pares}: Generación de números pares utilizando los tres tipos de ciclos.
+    \item \textbf{Suma}: Acumulación de sumas de $1$ a $n$ con diferentes estructuras de control.
+    \item \textbf{Tablas}: Generación de tablas de multiplicar de tamaño $N \times N$.
+\end{itemize}
+
+El objetivo central fue poner en práctica las estructuras de control (condicionales, ciclos \texttt{for}, \texttt{while} y \texttt{do-while}), el manejo de arreglos y la manipulación de cadenas de texto dentro del entorno de un navegador web.
+
+%================================================
+\section{\color{colorIPN}{Desarrollo}}
+
+\subsection{\color{colorESCOM}{Ejercicios Generales}}
+
+\subsubsection{\color{colorESCOM}{Ejercicio 1: Número par o impar}}
+
+Se solicitó al usuario ingresar un número entero. Mediante el operador módulo (\texttt{\%}), el programa determina si el número es par o impar e imprime el resultado en el documento.
+
+\begin{lstlisting}[style=jsStyle, caption={Ejercicio 1 -- Par o impar}]
+alert("Leer un numero y mostrar si dicho numero es o no es par.")
+let num = parseInt(prompt("Ingrese un numero: "));
+if (num % 2 == 0) {
+    document.write("<br><h5>El numero es par</h5>");
+} else {
+    document.write("<br><h5>El numero es impar</h5>");
+}
+\end{lstlisting}
+
+\textbf{Conceptos aplicados:} condicional \texttt{if-else}, operador módulo, función \texttt{parseInt()}.
+
+%----------------------------------------------------
+\subsubsection{\color{colorESCOM}{Ejercicio 2: Tabla de multiplicar}}
+
+El usuario ingresa un número y el programa genera su tabla de multiplicar del 1 al 10 mediante un ciclo \texttt{for}.
+
+\begin{lstlisting}[style=jsStyle, caption={Ejercicio 2 -- Tabla de multiplicar}]
+alert("Leer un numero y mostrar su tabla de multiplicar")
+let num = parseInt(prompt("Ingrese un numero: "));
+document.write("<br><h5>Tabla de multiplicar del " + num + ":</h5>");
+for (let i = 1; i <= 10; i++) {
+    document.write("<br>" + num + " x " + i + " = " + (num * i));
+}
+\end{lstlisting}
+
+\textbf{Conceptos aplicados:} ciclo \texttt{for}, operaciones aritméticas, concatenación de cadenas.
+
+%----------------------------------------------------
+\subsubsection{\color{colorESCOM}{Ejercicio 3: Producto mediante sumas sucesivas}}
+
+Se leen dos números y se calcula su producto sin utilizar el operador de multiplicación, sino acumulando sumas repetidas del primer número la cantidad de veces indicada por el segundo.
+
+\begin{lstlisting}[style=jsStyle, caption={Ejercicio 3 -- Producto por sumas}]
+let num1 = parseInt(prompt("Ingrese el primer numero: "));
+let num2 = parseInt(prompt("Ingresa el segundo numero: "));
+let suma = 0;
+document.write("<br><h5>Producto de " + num1 + " sumado " + num2 + " veces:</h5>");
+for (let i = 1; i <= num2; i++) {
+    if (i < num2) { document.write(num1 + " + "); }
+    else          { document.write(num1 + ". "); }
+    suma += num1;
+}
+document.write("<br><h5>Resultado: " + suma + "</h5>");
+\end{lstlisting}
+
+\textbf{Conceptos aplicados:} ciclo \texttt{for}, acumulador, operador condicional dentro del ciclo.
+
+%----------------------------------------------------
+\subsubsection{\color{colorESCOM}{Ejercicio 4: Mayor valor en un arreglo}}
+
+El usuario define cuántos números ingresará, se almacenan en un arreglo y se utiliza el método \texttt{sort()} de mayor a menor para obtener el valor máximo en la posición 0.
+
+\begin{lstlisting}[style=jsStyle, caption={Ejercicio 4 -- Mayor valor en arreglo}]
+let l = prompt("Cuantos numeros deseas agregar: ");
+let num = [];
+for (let i = 0; i <= l; i++) {
+    num[i] = prompt("Escribe un numero.");
+    num.sort((a, b) => b - a);
+}
+document.write("<br><h5>Resultado: " + num[0] + " </h5>");
+\end{lstlisting}
+
+\textbf{Conceptos aplicados:} arreglos, ciclo \texttt{for}, método \texttt{sort()} con función comparadora, función flecha.
+
+%----------------------------------------------------
+\subsubsection{\color{colorESCOM}{Ejercicio 5: Suma de vectores A y B}}
+
+Se generan dos vectores $A$ y $B$ de $n$ elementos cada uno. El arreglo $C$ almacena en cada posición $i$ la suma $A[i] + B[i]$.
+
+\begin{lstlisting}[style=jsStyle, caption={Ejercicio 5 -- Suma de vectores}]
+let n = prompt("Cuantos numeros deseas agregar: ");
+let A = [], B = [], C = [];
+for (let i = 0; i < n; i++) {
+    A[i] = parseInt(prompt("Escribe un numero para el vector A: "));
+    B[i] = parseInt(prompt("Escribe un numero para el vector B: "));
+    C[i] = A[i] + B[i];
+}
+document.write("<br><h5>Resultado: A[i] + B[i] = C[i]</h5>");
+for (let i = 0; i < n; i++) {
+    document.write("<br><h5>" + A[i] + " + " + B[i] + " = " + C[i] + "</h5>");
+}
+\end{lstlisting}
+
+\textbf{Conceptos aplicados:} arreglos múltiples, suma elemento a elemento, ciclo \texttt{for}, indexación.
+
+%----------------------------------------------------
+\subsubsection{\color{colorESCOM}{Ejercicio 6: Media aritmética}}
+
+El usuario ingresa números de forma indefinida usando \texttt{confirm()} para decidir si continúa. Al terminar, se calcula la media acumulando progresivamente cada valor dividido entre el total de elementos.
+
+\begin{lstlisting}[style=jsStyle, caption={Ejercicio 6 -- Media aritmética}]
+let res = 0, e = true, i = 0, num = [];
+while (e) {
+    num[i] = prompt("Escribe un numero.");
+    e = confirm("Deseas agregar otro numero?");
+    i++;
+}
+let n = num.length;
+for (let j = 0; j < n; j++) {
+    document.write("<h5>Numeros: " + num[j] + ", </h5>");
+    res += num[j] / n;
+}
+document.write("<br><h5>Resultado: " + res + " </h5>");
+\end{lstlisting}
+
+\textbf{Conceptos aplicados:} ciclo \texttt{while}, función \texttt{confirm()}, propiedad \texttt{length}, acumulador de media.
+
+%----------------------------------------------------
+\subsubsection{\color{colorESCOM}{Ejercicio 7: Ordenamiento de arreglo}}
+
+Se leen $n$ números del usuario, se almacenan en un arreglo y se ordenan de menor a mayor con el método \texttt{sort()}, mostrándolos separados por comas.
+
+\begin{lstlisting}[style=jsStyle, caption={Ejercicio 7 -- Ordenamiento de arreglo}]
+let num = [], l = prompt("Cuantos numeros deseas agregar: ");
+for (let i = 0; i < l; i++) {
+    num[i] = prompt("Escribe un numero.");
+}
+num.sort((a, b) => a - b);
+for (let i = 0; i < l; i++) {
+    if (i < l - 1) document.write(num[i] + ", ");
+    else           document.write(num[i] + ". ");
+}
+\end{lstlisting}
+
+\textbf{Conceptos aplicados:} arreglos, \texttt{sort()} ascendente, formato de salida condicional.
+
+%----------------------------------------------------
+\subsubsection{\color{colorESCOM}{Ejercicio 8: Análisis de cadenas de texto}}
+
+El usuario ingresa $n$ textos. Para cada uno se muestra su longitud, su versión en mayúsculas y su versión en minúsculas mediante los métodos de cadena de JavaScript.
+
+\begin{lstlisting}[style=jsStyle, caption={Ejercicio 8 -- Manipulación de cadenas}]
+let l = prompt("Cuantos textos deseas agregar: ");
+let textos = [];
+for (let i = 0; i < l; i++) {
+    textos[i] = prompt("Escribe un texto.");
+}
+for (let i = 0; i < l; i++) {
+    document.write("<br><h5>Texto " + (i+1) + ": " + textos[i] + "</h5>");
+    document.write("<p>Longitud: " + textos[i].length + "</p>");
+    document.write("<p>En mayusculas: " + textos[i].toUpperCase() + "</p>");
+    document.write("<p>En minusculas: " + textos[i].toLowerCase() + "</p>");
+}
+\end{lstlisting}
+
+\textbf{Conceptos aplicados:} arreglos de cadenas, métodos \texttt{.length}, \texttt{.toUpperCase()}, \texttt{.toLowerCase()}.
+
+%================================================
+\subsection{\color{colorESCOM}{Grupo: Pares}}
+
+Este conjunto de ejercicios tiene como objetivo mostrar los números pares del 1 a $n$ usando los tres estructuras de repetición disponibles en JavaScript.
+
+\subsubsection{\color{colorESCOM}{Pares -- Ejercicio 1: Ciclo \texttt{for}}}
+
+\begin{lstlisting}[style=jsStyle, caption={Pares con for}]
+let n = parseInt(prompt("Ingrese un numero n: "));
+for (let i = 1; i <= n; i++) {
+    if (i % 2 == 0) {
+        if (i < n) { document.write(i + " , "); }
+        else       { document.write(i); }
+    }
+}
+\end{lstlisting}
+
+El ciclo recorre de 1 a $n$; el condicional filtra únicamente los pares verificando si el residuo entre 2 es cero.
+
+\subsubsection{\color{colorESCOM}{Pares -- Ejercicio 2: Ciclo \texttt{while}}}
+
+\begin{lstlisting}[style=jsStyle, caption={Pares con while}]
+let n = parseInt(prompt("Ingrese un numero n: "));
+let i = 1;
+while (i <= n) {
+    if (i % 2 == 0) {
+        if (i < n) { document.write(i + " , "); }
+        else       { document.write(i); }
+    }
+    i++;
+}
+\end{lstlisting}
+
+La lógica es idéntica al ejercicio anterior, pero la condición de parada se evalúa al inicio de cada iteración y el incremento se gestiona manualmente.
+
+\subsubsection{\color{colorESCOM}{Pares -- Ejercicio 3: Ciclo \texttt{do-while}}}
+
+\begin{lstlisting}[style=jsStyle, caption={Pares con do-while}]
+let n = parseInt(prompt("Ingrese un numero n: "));
+let i = 1;
+do {
+    if (i % 2 == 0) {
+        if (i < n) { document.write(i + " , "); }
+        else       { document.write(i); }
+    }
+    i++;
+} while (i <= n);
+\end{lstlisting}
+
+A diferencia del \texttt{while}, la primera iteración siempre se ejecuta antes de evaluar la condición. Para $n \geq 1$ el resultado es equivalente al anterior.
+
+%================================================
+\subsection{\color{colorESCOM}{Grupo: Suma}}
+
+Los tres ejercicios del grupo Suma calculan $\displaystyle\sum_{i=1}^{n} i$ mostrando la expresión expandida (p.\,ej., $1 + 2 + 3 = 6$) y su resultado.
+
+\subsubsection{\color{colorESCOM}{Suma -- Ejercicio 1: Ciclo \texttt{for}}}
+
+\begin{lstlisting}[style=jsStyle, caption={Suma con for}]
+let n = parseInt(prompt("Ingrese un numero: "));
+let suma = 0;
+for (let i = 1; i <= n; i++) {
+    if (i < n) { document.write(i + " + "); }
+    else       { document.write(i); }
+    suma += i;
+}
+document.write("<br><h5>Resultado: " + suma + " </h5>");
+\end{lstlisting}
+
+\subsubsection{\color{colorESCOM}{Suma -- Ejercicio 2: Ciclo \texttt{while}}}
+
+\begin{lstlisting}[style=jsStyle, caption={Suma con while}]
+let n = parseInt(prompt("Ingrese un numero: "));
+let suma = 0, i = 1;
+while (i <= n) {
+    if (i < n) { document.write(i + " + "); }
+    else       { document.write(i); }
+    suma += i;
+    i++;
+}
+document.write("<br><h5>Resultado: " + suma + " </h5>");
+\end{lstlisting}
+
+\subsubsection{\color{colorESCOM}{Suma -- Ejercicio 3: Ciclo \texttt{do-while}}}
+
+\begin{lstlisting}[style=jsStyle, caption={Suma con do-while}]
+let n = parseInt(prompt("Ingrese un numero: "));
+let suma = 0, i = 1;
+do {
+    if (i < n) { document.write(i + " + "); }
+    else       { document.write(i); }
+    suma += i;
+    i++;
+} while (i <= n);
+document.write("<br><h5>Resultado: " + suma + " </h5>");
+\end{lstlisting}
+
+En los tres casos el resultado matemático es $n(n+1)/2$.
+
+%================================================
+\subsection{\color{colorESCOM}{Grupo: Tablas}}
+
+El grupo Tablas genera una tabla de multiplicar de tamaño $N \times N$ en formato HTML utilizando las etiquetas \texttt{<table>}, \texttt{<thead>} y \texttt{<tbody>}, con la librería Bootstrap para el estilo visual.
+
+\subsubsection{\color{colorESCOM}{Tablas -- Ejercicio 1: Doble \texttt{for}}}
+
+\begin{lstlisting}[style=jsStyle, caption={Tabla N x N con for}]
+let n = parseInt(prompt("Ingrese un numero: "));
+document.write("<table class='table table-bordered'>");
+document.write("<thead><tr>");
+for (let i = 0; i <= n; i++) { document.write("<th>" + i + "</th>"); }
+document.write("</tr></thead><tbody>");
+for (let i = 1; i <= n; i++) {
+    document.write("<tr>");
+    for (let j = 0; j <= n; j++) {
+        if (j === 0) document.write("<th>" + i + "</th>");
+        else         document.write("<td>" + (i*j) + "</td>");
+    }
+    document.write("</tr>");
+}
+document.write("</tbody></table>");
+\end{lstlisting}
+
+Se usan dos ciclos \texttt{for} anidados: el externo itera sobre las filas y el interno sobre las columnas. La primera columna y la primera fila actúan como encabezados.
+
+\subsubsection{\color{colorESCOM}{Tablas -- Ejercicio 2: Doble \texttt{while}}}
+
+La lógica es equivalente al ejercicio anterior, pero implementada con dos ciclos \texttt{while} anidados. Es necesario reinicializar el contador interno (\texttt{j = 0}) al inicio de cada fila para que el ciclo interno se recorra completo en cada iteración del externo.
+
+\subsubsection{\color{colorESCOM}{Tablas -- Ejercicio 3: Doble \texttt{do-while}}}
+
+Ídem al ejercicio 2 pero con estructuras \texttt{do-while}. Al igual que en el caso del \texttt{while}, el índice interno debe reiniciarse por cada fila para evitar que el ciclo interno no se ejecute en filas subsecuentes.
+
+%================================================
+\section{\color{colorIPN}{Conclusiones}}
+
+La práctica permitió consolidar el uso de JavaScript como lenguaje de scripting dentro del navegador, reforzando conceptos fundamentales de programación estructurada. A continuación se presentan las conclusiones más relevantes, con especial énfasis en los posibles errores que pueden surgir durante el desarrollo e implementación.
+
+\begin{itemize}
+
+    \item \textbf{Equivalencia de los ciclos:} Los tres tipos de ciclos (\texttt{for}, \texttt{while}, \texttt{do-while}) son intercambiables para los problemas abordados. La elección de uno u otro depende principalmente de la legibilidad y de si se requiere que el bloque se ejecute al menos una vez (\texttt{do-while}).
+
+    \item \textbf{Error frecuente: conversión de tipo implícita.} En el Ejercicio 4, el arreglo se llena con valores provenientes directamente de \texttt{prompt()}, los cuales son cadenas de texto. Al ordenar con \texttt{sort((a,b) => b-a)} JavaScript los coerciona a número, pero si no se aplica \texttt{parseInt()} explícitamente antes de almacenar, el orden lexicográfico puede producir resultados incorrectos (p.\,ej., ``9'' $>$ ``10'' como cadenas).
+
+    \item \textbf{Error frecuente: límite incorrecto en ciclos.} En el Ejercicio 4 el ciclo usa \texttt{i <= l} en lugar de \texttt{i < l}, lo que provoca que se solicite un dato extra y se almacene \texttt{undefined} en la última posición del arreglo.
+
+    \item \textbf{Error frecuente: reinicialización en ciclos anidados.} En las Tablas con \texttt{while} y \texttt{do-while}, si el índice del ciclo interno (\texttt{j}) no se reinicia a 0 al inicio de cada fila, el ciclo interior no se ejecuta a partir de la segunda fila, generando una tabla incompleta.
+
+    \item \textbf{Error frecuente: uso de \texttt{document.write()} tras la carga del documento.} Si \texttt{document.write()} se invoca después de que el DOM haya terminado de cargarse (por ejemplo, desde un event listener), sobreescribe todo el contenido de la página. En los ejercicios esto no ocurre porque el script se ejecuta de forma síncrona durante el parsing, pero es una limitación importante a considerar en proyectos más complejos.
+
+    \item \textbf{Conclusión general:} JavaScript proporciona una forma ágil e inmediata de interactuar con el usuario desde el navegador sin necesidad de infraestructura de servidor. No obstante, sus conversiones implícitas de tipo y la falta de tipado estático exigen especial cuidado al manejar entradas del usuario, siendo recomendable siempre aplicar \texttt{parseInt()} o \texttt{parseFloat()} según corresponda.
+
+\end{itemize}
+
+%================================================
+\pagebreak
+\section{\color{colorIPN}{Referencias Bibliográficas}}
+
+\begin{thebibliography}{9}
+
+\bibitem{mdn} Mozilla Developer Network (MDN). (2024). \textit{JavaScript — Dynamic client-side scripting}. MDN Web Docs. \texttt{https://developer.mozilla.org/es/docs/Learn/JavaScript}
+
+\bibitem{ecma} ECMAScript International. (2023). \textit{ECMAScript 2023 Language Specification}. \texttt{https://tc39.es/ecma262/}
+
+\bibitem{flanagan} Flanagan, D. (2020). \textit{JavaScript: The Definitive Guide} (7\textsuperscript{a} ed.). O'Reilly Media.
+
+\bibitem{bootstrap} Bootstrap Team. (2021). \textit{Bootstrap 5 Documentation}. \texttt{https://getbootstrap.com/docs/5.0/}
+
+\end{thebibliography}
+
+\end{document}
